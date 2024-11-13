@@ -10,7 +10,7 @@ let start0IntervalFunc = function() {
 };
 let coming0_second0 = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
     [1,15,25],
-    [-1],
+    [99,99,99],
     [-1],
     [-1],
     [-1],
@@ -37,7 +37,7 @@ let coming0_second0 = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
 ]
 let coming0_kind = [
     [0,2,3],
-    [-1],
+    [4,4,4],
     [-1],
     [-1],
     [-1],
@@ -63,8 +63,8 @@ let coming0_kind = [
     [0,2,3]
 ]
 let coming0_for = [
-    [0,2,3],
-    [-1],
+    [0,0,2],
+    [4,4,4],
     [-1],
     [-1],
     [-1],
@@ -89,12 +89,12 @@ let coming0_for = [
     [0,0,0,0],
     [0,0,2]
 ]
-///0:湘南台 1:上永谷
-let kinds0=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local'>普通</div>",,"<div class='local'>最終</div>"]
-let kinds0_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng local'>Local</div>","<div class='eng local'>Final</div>"]
-let kinds0_s=["伊勢佐木長者町から各駅に停まります","上大岡、上永谷と、戸塚からの各駅に停まります","湘南台行き 最終電車です","上永谷行き 最終電車です"]
-let kinds0_for=["湘南台","踊場","上永谷"]
-let kinds0_fore=["Shonandai","Odoriba","Kaminagaya"]
+///0:湘南台 1:踊場 2:上永谷
+let kinds0=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local'>普通</div>","<div class='final local'>最終</div>","　"]
+let kinds0_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng local'>Local</div>","<div class='eng final local'>Final</div>","　"]
+let kinds0_s=["伊勢佐木長者町から各駅に停まります","上大岡、上永谷と、戸塚からの各駅に停まります","湘南台行き 最終電車です","上永谷行き 最終電車です","　"]
+let kinds0_for=["湘南台","踊場","上永谷","　"]
+let kinds0_fore=["Shonandai","Odoriba","Kaminagaya","　"]
 let exec0IntervalFunc = function() {
     let jtime = new Date();
     let hour0 = jtime.getHours();
@@ -103,7 +103,7 @@ let exec0IntervalFunc = function() {
     let nowpos0 = 0
     let minute0s = minute0;
     let hour0s=hour0;
-    if(hour0 < 5){
+    if(hour0 < 5 && hour0 != 0){
         hour0s = 5;
         minute0s = 0;
     }

@@ -12,6 +12,7 @@ body {
 }
 table{
     border-spacing:0;
+    
 }
 #clock{
     font-size:1.5vw;
@@ -87,27 +88,27 @@ td.for_j{
 }
 .local{
     background-color:#0000ff;
-    padding:1vw 0;
-    margin:0;
+    padding:1.9vw 0;
+    border-radius: 10px;
 }
 .jr_lo{
     background-color:#00A7E3;
-    padding:1vw 0;
-    margin:0; 
+    padding:1.9vw 0;
+    border-radius: 10px;
 }
 .ra{
     background-color:#ff1111;
-    padding:1vw 0;
-    margin:0;
+    padding:1.9vw 0;
+    border-radius: 10px;
 }
 .yoko{
     background-color:#85C023;
-    padding:1vw 0;
-    margin:0; 
+    padding:1.9vw 0;
+    border-radius: 10px;
 }
 .eng{
     font-size:2vw;
-    padding:1.5vw 0;
+    padding:2.1vw 0;
 
 }
 .ads{
@@ -119,4 +120,7 @@ td.for_j{
 }
 #jr{
     background-color:#22aa22;
+}
+.final{
+    color:red;
 }

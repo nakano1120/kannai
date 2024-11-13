@@ -18,7 +18,7 @@ let startIntervalFunc = function() {
 };
 let coming_second = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
     [11,26],
-    [-1],
+    [99,99,99],
     [-1],
     [-1],
     [-1],
@@ -45,7 +45,7 @@ let coming_second = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
 ]
 let coming_kind = [
     [0,2],
-    [-1],
+    [3,3,3],
     [-1],
     [-1],
     [-1],
@@ -72,7 +72,7 @@ let coming_kind = [
 ]
 let coming_for = [
     [0,0],
-    [-1],
+    [2,2,2],
     [-1],
     [-1],
     [-1],
@@ -97,11 +97,12 @@ let coming_for = [
     [0,0,0,0,0,0],
     [0,0]
 ]
-let kinds=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local'>最終</div>"]
-let kinds_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng local'>Final</div>"]
-let kinds_s=["桜木町からの各駅に停まります","桜木町、横浜、新横浜、新羽からの各駅に停まります","あざみ野行き 最終電車です"]
-let kinds_for=["あざみ野","新羽"]
-let kinds_fore=["Azamino","Nippa"]
+//0:あざみ野 1:新羽
+let kinds=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local final'>最終</div>","　"]
+let kinds_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng final local'>Final</div>","　"]
+let kinds_s=["桜木町からの各駅に停まります","桜木町、横浜、新横浜、新羽からの各駅に停まります","あざみ野行き 最終電車です","　"]
+let kinds_for=["あざみ野","新羽","　"]
+let kinds_fore=["Azamino","Nippa","　"]
 let execIntervalFunc = function() {
     let jtime = new Date();
     let hour = jtime.getHours();
@@ -119,7 +120,7 @@ let execIntervalFunc = function() {
     }
     let minutes = minute;
     let hours=hour;
-    if(hour < 5){
+    if(hour < 5 && hour != 0){
         hours = 5;
         minutes = 0;
     }
@@ -136,13 +137,14 @@ let execIntervalFunc = function() {
                     console.log("BD")
                     document.getElementById("t1").innerHTML=(hours+1)+":"+(coming_second[hours+1][0]);
                     document.getElementById("k1").innerHTML=kinds[coming_kind[hours+1][0]]
-                    console.log("aaa"+Math.round(minutes/10))
+                    console.log("a"+Math.round(minutes/10))
                     if(Math.round(second/10)%2==0){
                         document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours+1][0]]
                     }else{
                         document.getElementById("k1").innerHTML=kinds_e[coming_kind[hours+1][0]]
                         document.getElementById("fj1").innerHTML=kinds_fore[coming_for[hours+1][0]]
                     }
+                    document.getElementById("s1").innerHTML=kinds_s[coming_kind[hours+1][0]]
                     ///document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours][l]]
                     ///document.getElementById("fe1").innerHTML=kinds_fore[coming_for[hours][l]]
                     if(coming_second[hours+1][0]<10){
@@ -156,6 +158,7 @@ let execIntervalFunc = function() {
                         document.getElementById("k2").innerHTML=kinds_e[coming_kind[hours+1][1]]
                         document.getElementById("fj2").innerHTML=kinds_fore[coming_for[hours+1][1]]
                     }
+                    document.getElementById("s2").innerHTML=kinds_s[coming_kind[hours+1][1]]
                     //document.getElementById("fj2").innerHTML=kinds_for[coming_for[hours][l+1]]
                     //document.getElementById("fe2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                     if(coming_second[hours+1][1]<10){
@@ -169,13 +172,14 @@ let execIntervalFunc = function() {
                         document.getElementById("k3").innerHTML=kinds_e[coming_kind[hours+1][2]]
                         document.getElementById("fj3").innerHTML=kinds_fore[coming_for[hours+1][2]]
                     }
+                    document.getElementById("s3").innerHTML=kinds_s[coming_kind[hours+1][2]]
                     ///document.getElementById("fj3").innerHTML=kinds_for[coming_for[hours][l+2]]
                     ///document.getElementById("fe3").innerHTML=kinds_fore[coming_for[hours][l+2]]
                     if(coming_second[hours+1][2]<10){
                         document.getElementById("t3").innerHTML=(hours+1)+":0"+(coming_second[hours+1][2]);
                     }
                 }else{
-                    console.log("B")
+                    console.log("BB")
                     document.getElementById("t1").innerHTML=(hours)+":"+(coming_second[hours][l-1]);
                     document.getElementById("k1").innerHTML=kinds[coming_kind[hours][l-1]]
                     if(Math.round(second/10)%2==0){
@@ -184,6 +188,7 @@ let execIntervalFunc = function() {
                         document.getElementById("k1").innerHTML=kinds_e[coming_kind[hours][l-1]]
                         document.getElementById("fj1").innerHTML=kinds_fore[coming_for[hours][l-1]]
                     }
+                    document.getElementById("s1").innerHTML=kinds_s[coming_kind[hours][l-1]]
                     ///document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours][l-1]]
                     ///document.getElementById("fe1").innerHTML=kinds_fore[coming_for[hours][l-1]]
                     if(coming_second[hours][l-1]<10){
@@ -197,6 +202,7 @@ let execIntervalFunc = function() {
                         document.getElementById("k2").innerHTML=kinds_e[coming_kind[hours+1][0]]
                         document.getElementById("fj2").innerHTML=kinds_fore[coming_for[hours+1][0]]
                     }
+                    document.getElementById("s2").innerHTML=kinds_s[coming_kind[hours+1][0]]
                     //document.getElementById("fj2").innerHTML=kinds_for[coming_for[hours+1][0]]
                     //document.getElementById("fe2").innerHTML=kinds_fore[coming_for[hours+1][0]]
                     if(coming_second[hours+1][0]<10){
@@ -210,6 +216,7 @@ let execIntervalFunc = function() {
                         document.getElementById("k3").innerHTML=kinds_e[coming_kind[hours+1][1]]
                         document.getElementById("fj3").innerHTML=kinds_fore[coming_for[hours+1][1]]
                     }
+                    document.getElementById("s3").innerHTML=kinds_s[coming_kind[hours+1][1]]
                     //document.getElementById("fj3").innerHTML=kinds_for[coming_for[hours+1][1]]
                     //document.getElementById("fe3").innerHTML=kinds_fore[coming_for[hours+1][1]]
                     if(coming_second[hours+1][1]<10){
@@ -227,6 +234,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k1").innerHTML=kinds_e[coming_kind[hours][l]]
                     document.getElementById("fj1").innerHTML=kinds_fore[coming_for[hours][l]]
                 }
+                document.getElementById("s1").innerHTML=kinds_s[coming_kind[hours][l]]
                 ///document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours][l]]
                 ///document.getElementById("fe1").innerHTML=kinds_fore[coming_for[hours][l]]
                 if(coming_second[hours][l]<10){
@@ -240,6 +248,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k2").innerHTML=kinds_e[coming_kind[hours+1][0]]
                     document.getElementById("fj2").innerHTML=kinds_fore[coming_for[hours+1][0]]
                 }
+                document.getElementById("s2").innerHTML=kinds_s[coming_kind[hours+1][0]]
                 //document.getElementById("fj2").innerHTML=kinds_for[coming_for[hours][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                 if(coming_second[hours+1][0]<10){
@@ -253,6 +262,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k3").innerHTML=kinds_e[coming_kind[hours+1][1]]
                     document.getElementById("fj3").innerHTML=kinds_fore[coming_for[hours+1][1]]
                 }
+                document.getElementById("s3").innerHTML=kinds_s[coming_kind[hours+1][1]]
                 //document.getElementById("fj3").innerHTML=kinds_for[coming_for[hours+1][0]]
                 //document.getElementById("fe3").innerHTML=kinds_fore[coming_for[hours+1][0]]
                 if(coming_second[hours+1][1]<10){
@@ -269,6 +279,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k1").innerHTML=kinds_e[coming_kind[hours][l]]
                     document.getElementById("fj1").innerHTML=kinds_fore[coming_for[hours][l]]
                 }
+                document.getElementById("s1").innerHTML=kinds_s[coming_kind[hours][l]]
                 ///document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours][l]]
                 ///document.getElementById("fe1").innerHTML=kinds_fore[coming_for[hours][l]]
                 if(coming_second[hours][l]<10){
@@ -282,6 +293,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k2").innerHTML=kinds_e[coming_kind[hours][l+1]]
                     document.getElementById("fj2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                 }
+                document.getElementById("s2").innerHTML=kinds_s[coming_kind[hours][l+1]]
                 //document.getElementById("fj2").innerHTML=kinds_for[coming_for[hours][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                 if(coming_second[hours][l+1]<10){
@@ -295,6 +307,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k3").innerHTML=kinds_e[coming_kind[hours+1][0]]
                     document.getElementById("fj3").innerHTML=kinds_fore[coming_for[hours+1][0]]
                 }
+                document.getElementById("s3").innerHTML=kinds_s[coming_kind[hours+1][0]]
                 //document.getElementById("fj3").innerHTML=kinds_for[coming_for[hours+1][0]]
                 //document.getElementById("fe3").innerHTML=kinds_fore[coming_for[hours+1][0]]
                 if(coming_second[hours+1][0]<10){
@@ -311,6 +324,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k1").innerHTML=kinds_e[coming_kind[hours][l]]
                     document.getElementById("fj1").innerHTML=kinds_fore[coming_for[hours][l]]
                 }
+                document.getElementById("s1").innerHTML=kinds_s[coming_kind[hours][l]]
                 ///document.getElementById("fj1").innerHTML=kinds_for[coming_for[hours][l]]
                 ///document.getElementById("fe1").innerHTML=kinds_fore[coming_for[hours][l]]
                 if(coming_second[hours][l]<10){
@@ -324,6 +338,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k2").innerHTML=kinds_e[coming_kind[hours][l+1]]
                     document.getElementById("fj2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                 }
+                document.getElementById("s2").innerHTML=kinds_s[coming_kind[hours][l+1]]
                 //document.getElementById("fj2").innerHTML=kinds_for[coming_for[hours][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds_fore[coming_for[hours][l+1]]
                 if(coming_second[hours][l+1]<10){
@@ -337,6 +352,7 @@ let execIntervalFunc = function() {
                     document.getElementById("k3").innerHTML=kinds_e[coming_kind[hours][l+2]]
                     document.getElementById("fj3").innerHTML=kinds_fore[coming_for[hours][l+2]]
                 }
+                document.getElementById("s3").innerHTML=kinds_s[coming_kind[hours][l+2]]
                 ///document.getElementById("fj3").innerHTML=kinds_for[coming_for[hours][l+2]]
                 ///document.getElementById("fe3").innerHTML=kinds_fore[coming_for[hours][l+2]]
                 if(coming_second[hours][l+2]<10){
