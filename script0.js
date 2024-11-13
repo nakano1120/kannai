@@ -8,7 +8,7 @@ let timer0    = null,
 let start0IntervalFunc = function() {
 	if (!timer0) timer0 = setInterval(exec0IntervalFunc, 1000);
 };
-let coming0_second = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
+let coming0_second0 = [ ///到着時間、[0]に入るのは⓪時、[1]が1時
     [1,15,25],
     [-1],
     [-1],
@@ -97,248 +97,239 @@ let kinds0_for=["湘南台","踊場","上永谷"]
 let kinds0_fore=["Shonandai","Odoriba","Kaminagaya"]
 let exec0IntervalFunc = function() {
     let jtime = new Date();
-    let hour = jtime.getHours();
-    let minute = jtime.getMinutes();
-    let second = jtime.getSeconds();
-    let nowpos = 0
-    let bonus = 0;
-    document.getElementById("clock").innerText= hour + ":" + minute + ":" + second
-    if (second < 10 && minute < 10){  
-        document.getElementById("clock").innerText = hour + ":0" + minute + ":0" + second  
-    }else if (second < 10){
-        document.getElementById("clock").innerText = hour + ":" + minute + ":0" + second
-    }else if(minute < 10){
-        document.getElementById("clock").innerText = hour + ":0" + minute + ":" + second 
+    let hour0 = jtime.getHours();
+    let minute0 = jtime.getMinutes();
+    let second0 = jtime.getSeconds();
+    let nowpos0 = 0
+    let minute0s = minute0;
+    let hour0s=hour0;
+    if(hour0 < 5){
+        hour0s = 5;
+        minute0s = 0;
     }
-    let minutes = minute;
-    let hours=hour;
-    if(hour < 5){
-        hours = 5;
-        minutes = 0;
-    }
-    for(let l=0;nowpos != 1;l+=1){
-        if(coming0_second[hours][l] <= minutes){
+    for(let l=0;nowpos0 != 1;l+=1){
+        if(coming0_second0[hour0s][l] <= minute0s){
             console.log("A")
             continue;
         }else{
             console.log(l)
-            console.log(coming0_second[hours].length)
-            if(l == coming0_second[hours].length){
-                console.log("B"+coming0_second[hours][l-1])
-                if(coming0_second[hours][l-1] <= minute){
+            console.log(coming0_second0[hour0s].length)
+            if(l == coming0_second0[hour0s].length){
+                console.log("B"+coming0_second0[hour0s][l-1])
+                if(coming0_second0[hour0s][l-1] <= minute0){
                     console.log("BD")
-                    document.getElementById("t01").innerHTML=(hours+1)+":"+(coming0_second[hours+1][0]);
-                    document.getElementById("k01").innerHTML=kinds0[coming0_kind[hours+1][0]]
-                    console.log("aaa"+Math.round(minutes/10))
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours+1][0]]
+                    document.getElementById("t01").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][0]);
+                    document.getElementById("k01").innerHTML=kinds0[coming0_kind[hour0s+1][0]]
+                    console.log("a"+Math.round(minute0s/10))
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                     }else{
-                        document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hours+1][0]]
-                        document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
+                        document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
+                        document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                     }
-                    ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
-                    ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hours][l]]
-                    if(coming0_second[hours+1][0]<10){
-                        document.getElementById("t01").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][0]);
+                    ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
+                    ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
+                    if(coming0_second0[hour0s+1][0]<10){
+                        document.getElementById("t01").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][0]);
                     }
-                    document.getElementById("t02").innerHTML=(hours+1)+":"+(coming0_second[hours+1][1]);
-                    document.getElementById("k02").innerHTML=kinds0[coming0_kind[hours+1][1]]
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours+1][1]]
+                    document.getElementById("t02").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][1]);
+                    document.getElementById("k02").innerHTML=kinds0[coming0_kind[hour0s+1][1]]
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s+1][1]]
                     }else{
-                        document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hours+1][1]]
-                        document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hours+1][1]]
+                        document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
+                        document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                     }
-                    //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
-                    //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
-                    if(coming0_second[hours+1][1]<10){
-                        document.getElementById("t02").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][1]);
+                    //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
+                    //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
+                    if(coming0_second0[hour0s+1][1]<10){
+                        document.getElementById("t02").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][1]);
                     }
-                    document.getElementById("t03").innerHTML=(hours+1)+":"+(coming0_second[hours+1][2]);
-                    document.getElementById("k03").innerHTML=kinds0[coming0_kind[hours+1][2]]
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][2]]
+                    document.getElementById("t03").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][2]);
+                    document.getElementById("k03").innerHTML=kinds0[coming0_kind[hour0s+1][2]]
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][2]]
                     }else{
-                        document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hours+1][2]]
-                        document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hours+1][2]]
+                        document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][2]]
+                        document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][2]]
                     }
-                    ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours][l+2]]
-                    ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hours][l+2]]
-                    if(coming0_second[hours+1][2]<10){
-                        document.getElementById("t03").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][2]);
+                    ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s][l+2]]
+                    ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
+                    if(coming0_second0[hour0s+1][2]<10){
+                        document.getElementById("t03").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][2]);
                     }
                 }else{
-                    console.log("B")
-                    document.getElementById("t01").innerHTML=(hours)+":"+(coming0_second[hours][l-1]);
-                    document.getElementById("k01").innerHTML=kinds0[coming0_kind[hours][l-1]]
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l-1]]
+                    console.log("BB")
+                    document.getElementById("t01").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l-1]);
+                    document.getElementById("k01").innerHTML=kinds0[coming0_kind[hour0s][l-1]]
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l-1]]
                     }else{
-                        document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hours][l-1]]
-                        document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hours][l-1]]
+                        document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l-1]]
+                        document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l-1]]
                     }
-                    ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l-1]]
-                    ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hours][l-1]]
-                    if(coming0_second[hours][l-1]<10){
-                        document.getElementById("t01").innerHTML=(hours)+":0"+(coming0_second[hours][l-1]);
+                    ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l-1]]
+                    ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l-1]]
+                    if(coming0_second0[hour0s][l-1]<10){
+                        document.getElementById("t01").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l-1]);
                     }
-                    document.getElementById("t02").innerHTML=(hours+1)+":"+(coming0_second[hours+1][0]);
-                    document.getElementById("k02").innerHTML=kinds0[coming0_kind[hours+1][0]]
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours+1][0]]
+                    document.getElementById("t02").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][0]);
+                    document.getElementById("k02").innerHTML=kinds0[coming0_kind[hour0s+1][0]]
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                     }else{
-                        document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hours+1][0]]
-                        document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
+                        document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
+                        document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                     }
-                    //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours+1][0]]
-                    //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
-                    if(coming0_second[hours+1][0]<10){
-                        document.getElementById("t02").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][0]);
+                    //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
+                    //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
+                    if(coming0_second0[hour0s+1][0]<10){
+                        document.getElementById("t02").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][0]);
                     }
-                    document.getElementById("t03").innerHTML=(hours+1)+":"+(coming0_second[hours+1][1]);
-                    document.getElementById("k03").innerHTML=kinds0[coming0_kind[hours+1][1]]
-                    if(Math.round(second/10)%2==0){
-                        document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][1]]
+                    document.getElementById("t03").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][1]);
+                    document.getElementById("k03").innerHTML=kinds0[coming0_kind[hour0s+1][1]]
+                    if(Math.round(second0/10)%2==0){
+                        document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][1]]
                     }else{
-                        document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hours+1][1]]
-                        document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hours+1][1]]
+                        document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
+                        document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                     }
-                    //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][1]]
-                    //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hours+1][1]]
-                    if(coming0_second[hours+1][1]<10){
-                        document.getElementById("t03").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][1]);
+                    //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][1]]
+                    //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
+                    if(coming0_second0[hour0s+1][1]<10){
+                        document.getElementById("t03").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][1]);
                     }
                 }
-            }else if(l+1 == coming0_second[hours].length){
+            }else if(l+1 == coming0_second0[hour0s].length){
                 console.log("I")
-                document.getElementById("t01").innerHTML=(hours)+":"+(coming0_second[hours][l]);
-                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hours][l]]
-                console.log("aaa"+Math.round(minutes/10))
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
+                document.getElementById("t01").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l]);
+                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hour0s][l]]
+                console.log("aaa"+Math.round(minute0s/10))
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 }else{
-                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hours][l]]
-                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hours][l]]
+                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
+                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
-                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
-                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hours][l]]
-                if(coming0_second[hours][l]<10){
-                    document.getElementById("t01").innerHTML=(hours)+":0"+(coming0_second[hours][l]);
+                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
+                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
+                if(coming0_second0[hour0s][l]<10){
+                    document.getElementById("t01").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l]);
                 }
-                document.getElementById("t02").innerHTML=(hours)+":"+(coming0_second[hours+1][0]);
-                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hours+1][0]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours+1][0]]
+                document.getElementById("t02").innerHTML=(hour0s)+":"+(coming0_second0[hour0s+1][0]);
+                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hour0s+1][0]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                 }else{
-                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hours+1][0]]
-                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
+                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
+                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 }
-                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
-                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
-                if(coming0_second[hours+1][0]<10){
-                    document.getElementById("t02").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][0]);
+                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
+                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
+                if(coming0_second0[hour0s+1][0]<10){
+                    document.getElementById("t02").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][0]);
                 }
-                document.getElementById("t03").innerHTML=(hours+1)+":"+(coming0_second[hours+1][1]);
-                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hours+1][1]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][1]]
+                document.getElementById("t03").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][1]);
+                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hour0s+1][1]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][1]]
                 }else{
-                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hours+1][1]]
-                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hours+1][1]]
+                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
+                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                 }
-                //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][0]]
-                //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
-                if(coming0_second[hours+1][1]<10){
-                    document.getElementById("t03").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][1]);
+                //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
+                //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
+                if(coming0_second0[hour0s+1][1]<10){
+                    document.getElementById("t03").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][1]);
                 }
-            }else if(l+2 == coming0_second[hours].length){
+            }else if(l+2 == coming0_second0[hour0s].length){
                 console.log("C")
-                document.getElementById("t01").innerHTML=(hours)+":"+(coming0_second[hours][l]);
-                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hours][l]]
-                console.log("aaa"+Math.round(minutes/10))
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
+                document.getElementById("t01").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l]);
+                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hour0s][l]]
+                console.log("aaa"+Math.round(minute0s/10))
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 }else{
-                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hours][l]]
-                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hours][l]]
+                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
+                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
-                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
-                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hours][l]]
-                if(coming0_second[hours][l]<10){
-                    document.getElementById("t01").innerHTML=(hours)+":0"+(coming0_second[hours][l-1]);
+                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
+                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
+                if(coming0_second0[hour0s][l]<10){
+                    document.getElementById("t01").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l-1]);
                 }
-                document.getElementById("t02").innerHTML=(hours)+":"+(coming0_second[hours][l+1]);
-                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hours][l+1]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
+                document.getElementById("t02").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l+1]);
+                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hour0s][l+1]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                 }else{
-                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hours][l+1]]
-                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
+                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s][l+1]]
+                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 }
-                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
-                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
-                if(coming0_second[hours][l+1]<10){
-                    document.getElementById("t02").innerHTML=(hours)+":0"+(coming0_second[hours][l+1]);
+                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
+                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
+                if(coming0_second0[hour0s][l+1]<10){
+                    document.getElementById("t02").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l+1]);
                 }
-                document.getElementById("t03").innerHTML=(hours+1)+":"+(coming0_second[hours+1][0]);
-                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hours+1][0]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][0]]
+                document.getElementById("t03").innerHTML=(hour0s+1)+":"+(coming0_second0[hour0s+1][0]);
+                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hour0s+1][0]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                 }else{
-                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hours+1][0]]
-                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
+                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
+                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 }
-                //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours+1][0]]
-                //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hours+1][0]]
-                if(coming0_second[hours+1][0]<10){
-                    document.getElementById("t03").innerHTML=(hours+1)+":0"+(coming0_second[hours+1][0]);
+                //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
+                //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
+                if(coming0_second0[hour0s+1][0]<10){
+                    document.getElementById("t03").innerHTML=(hour0s+1)+":0"+(coming0_second0[hour0s+1][0]);
                 }
             }else{
                 console.log("D")
-                document.getElementById("t01").innerHTML=(hours)+":"+(coming0_second[hours][l]);
-                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hours][l]]
-                console.log("aaa"+Math.round(minutes/10))
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
+                document.getElementById("t01").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l]);
+                document.getElementById("k01").innerHTML=kinds0[coming0_kind[hour0s][l]]
+                console.log("aaa"+Math.round(minute0s/10))
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 }else{
-                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hours][l]]
-                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hours][l]]
+                    document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
+                    document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
-                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hours][l]]
-                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hours][l]]
-                if(coming0_second[hours][l]<10){
-                    document.getElementById("t01").innerHTML=(hours)+":0"+(coming0_second[hours][l]);
+                ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
+                ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
+                if(coming0_second0[hour0s][l]<10){
+                    document.getElementById("t01").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l]);
                 }
-                document.getElementById("t02").innerHTML=(hours)+":"+(coming0_second[hours][l+1]);
-                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hours][l+1]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
+                document.getElementById("t02").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l+1]);
+                document.getElementById("k02").innerHTML=kinds0[coming0_kind[hour0s][l+1]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                 }else{
-                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hours][l+1]]
-                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
+                    document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s][l+1]]
+                    document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 }
-                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hours][l+1]]
-                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hours][l+1]]
-                if(coming0_second[hours][l+1]<10){
-                    document.getElementById("t02").innerHTML=(hours)+":0"+(coming0_second[hours][l+1]);
+                //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
+                //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
+                if(coming0_second0[hour0s][l+1]<10){
+                    document.getElementById("t02").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l+1]);
                 }
-                document.getElementById("t03").innerHTML=(hours)+":"+(coming0_second[hours][l+2]);
-                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hours][l+2]]
-                if(Math.round(second/10)%2==0){
-                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours][l+2]]
+                document.getElementById("t03").innerHTML=(hour0s)+":"+(coming0_second0[hour0s][l+2]);
+                document.getElementById("k03").innerHTML=kinds0[coming0_kind[hour0s][l+2]]
+                if(Math.round(second0/10)%2==0){
+                    document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s][l+2]]
                 }else{
-                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hours][l+2]]
-                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hours][l+2]]
+                    document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s][l+2]]
+                    document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
                 }
-                ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hours][l+2]]
-                ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hours][l+2]]
-                if(coming0_second[hours][l+2]<10){
-                    document.getElementById("t03").innerHTML=(hours)+":0"+(coming0_second[hours][l+2]);
+                ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s][l+2]]
+                ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
+                if(coming0_second0[hour0s][l+2]<10){
+                    document.getElementById("t03").innerHTML=(hour0s)+":0"+(coming0_second0[hour0s][l+2]);
                 }
             }
             console.log("と")
 
-            nowpos += 1;
+            nowpos0 += 1;
         }
     }
 };

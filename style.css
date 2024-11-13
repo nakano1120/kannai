@@ -6,7 +6,7 @@ body {
 }
 #header{
     background-color:#c9c9c9;
-    font-size:4vw;
+    font-size:2.5vw;
     color:#fefefe;
     background-color:#010101;
 }
@@ -14,7 +14,7 @@ table{
     border-spacing:0;
 }
 #clock{
-    font-size:3vw;
+    font-size:1.5vw;
     background-color:#01003d;
     color:#fffd90;
 }
@@ -24,7 +24,7 @@ table{
     
 }
 .big{
-    font-size:4vh;
+    font-size:2vw;
     background-color: #111111;
 }
 .none{
@@ -49,32 +49,32 @@ table{
     width:24%;
 }
 .exp{
-    font-size:2.5vh;
+    font-size:2vw;
     color:rgb(255, 217, 0);
 }
 .for_j{
-    font-size:5vh;
+    font-size:3vw;
 }
 td.for_j{
     border:none;
 }
 .for_e{
-    font-size:1.0vh;
+    font-size:1.5vw;
 }
 .local{
     background-color:#0099ff;
-    padding:2vh 0;
+    padding:1vw 0;
     margin:0;
 }
 .ra{
     background-color:#ff1111;
-    padding:1.5vh 0;
+    padding:1vw 0;
     margin:0;
 }
 
 .eng{
-    font-size:2.5vw;
-    padding:1.5vh 0;
+    font-size:2vw;
+    padding:1.5vw 0;
 
 }
 .ads{
