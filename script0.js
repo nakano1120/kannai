@@ -127,6 +127,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
                         document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                     }
+                    document.getElementById("s01").innerHTML=kinds0_s[coming0_kind[hour0s+1][0]]
                     ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                     ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                     if(coming0_second0[hour0s+1][0]<10){
@@ -140,6 +141,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
                         document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                     }
+                    document.getElementById("s02").innerHTML=kinds0_s[coming0_kind[hour0s+1][1]]
                     //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                     //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                     if(coming0_second0[hour0s+1][1]<10){
@@ -153,6 +155,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][2]]
                         document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][2]]
                     }
+                    document.getElementById("s03").innerHTML=kinds0_s[coming0_kind[hour0s+1][2]]
                     ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s][l+2]]
                     ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
                     if(coming0_second0[hour0s+1][2]<10){
@@ -168,6 +171,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l-1]]
                         document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l-1]]
                     }
+                    document.getElementById("s01").innerHTML=kinds0_s[coming0_kind[hour0s][l-1]]
                     ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l-1]]
                     ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l-1]]
                     if(coming0_second0[hour0s][l-1]<10){
@@ -181,6 +185,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
                         document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                     }
+                    document.getElementById("s02").innerHTML=kinds0_s[coming0_kind[hour0s+1][0]]
                     //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                     //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                     if(coming0_second0[hour0s+1][0]<10){
@@ -194,6 +199,7 @@ let exec0IntervalFunc = function() {
                         document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
                         document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                     }
+                    document.getElementById("s03").innerHTML=kinds0_s[coming0_kind[hour0s+1][1]]
                     //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][1]]
                     //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                     if(coming0_second0[hour0s+1][1]<10){
@@ -211,6 +217,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
                     document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
+                document.getElementById("s01").innerHTML=kinds0_s[coming0_kind[hour0s][l]]
                 ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 if(coming0_second0[hour0s][l]<10){
@@ -224,6 +231,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
                     document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 }
+                document.getElementById("s02").innerHTML=kinds0_s[coming0_kind[hour0s+1][0]]
                 //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 if(coming0_second0[hour0s+1][0]<10){
@@ -237,6 +245,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][1]]
                     document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][1]]
                 }
+                document.getElementById("s03").innerHTML=kinds0_s[coming0_kind[hour0s+1][1]]
                 //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                 //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 if(coming0_second0[hour0s+1][1]<10){
@@ -253,6 +262,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
                     document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
+                document.getElementById("s01").innerHTML=kinds0_s[coming0_kind[hour0s][l]]
                 ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 if(coming0_second0[hour0s][l]<10){
@@ -266,6 +276,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s][l+1]]
                     document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 }
+                document.getElementById("s02").innerHTML=kinds0_s[coming0_kind[hour0s][l+1]]
                 //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 if(coming0_second0[hour0s][l+1]<10){
@@ -279,6 +290,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s+1][0]]
                     document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 }
+                document.getElementById("s03").innerHTML=kinds0_s[coming0_kind[hour0s+1][0]]
                 //document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s+1][0]]
                 //document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s+1][0]]
                 if(coming0_second0[hour0s+1][0]<10){
@@ -295,6 +307,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k01").innerHTML=kinds0_e[coming0_kind[hour0s][l]]
                     document.getElementById("fj01").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 }
+                document.getElementById("s01").innerHTML=kinds0_s[coming0_kind[hour0s][l]]
                 ///document.getElementById("fj01").innerHTML=kinds0_for[coming0_for[hour0s][l]]
                 ///document.getElementById("fe1").innerHTML=kinds0_fore[coming0_for[hour0s][l]]
                 if(coming0_second0[hour0s][l]<10){
@@ -308,6 +321,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k02").innerHTML=kinds0_e[coming0_kind[hour0s][l+1]]
                     document.getElementById("fj02").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 }
+                document.getElementById("s02").innerHTML=kinds0_s[coming0_kind[hour0s][l+1]]
                 //document.getElementById("fj02").innerHTML=kinds0_for[coming0_for[hour0s][l+1]]
                 //document.getElementById("fe2").innerHTML=kinds0_fore[coming0_for[hour0s][l+1]]
                 if(coming0_second0[hour0s][l+1]<10){
@@ -321,6 +335,7 @@ let exec0IntervalFunc = function() {
                     document.getElementById("k03").innerHTML=kinds0_e[coming0_kind[hour0s][l+2]]
                     document.getElementById("fj03").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
                 }
+                document.getElementById("s03").innerHTML=kinds0_s[coming0_kind[hour0s][l+2]]
                 ///document.getElementById("fj03").innerHTML=kinds0_for[coming0_for[hour0s][l+2]]
                 ///document.getElementById("fe3").innerHTML=kinds0_fore[coming0_for[hour0s][l+2]]
                 if(coming0_second0[hour0s][l+2]<10){

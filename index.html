@@ -12,9 +12,9 @@
         <div id="clock">14:00:00</div>
         
     </div>
-    <div id="going">横浜・新横浜・あざみ野方面 <br></div>
+    <div id="bl">ブルーライン 横浜・新横浜・あざみ野方面 <br></div>
     <table class="main">
-        <tr>
+        <tr class="col">
             <td class="a">発車順</td>
             <td class="b">種別</td>
             <td class="c" colspan="2">行先</td>
@@ -28,7 +28,7 @@
             <!-- <td id="fe1" class="for_e">Haneda Airport</td> -->
             <td id="t1">14:03</td>
             
-            <td id="s1" class="exp"><marquee>桜木町、高島町、横浜、三ッ沢下町の順に停車</marquee></td>
+            <td class="exp"><p id="s1">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
         </tr>
         <tr class="big">
             <td class="for_e">次発</td>
@@ -37,7 +37,7 @@
             <!-- <td id="fe2" class="for_e">Haneda Airport</td> -->
             <td id="t2">14:05</td>
             
-            <td id="s2" class="exp"><marquee>桜木町、高島町、横浜、三ッ沢下町の順に停車</marquee></td>
+            <td class="exp"><p id="s2">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
         </tr>
         <tr class="big none">
             <td>3</td>
@@ -46,13 +46,13 @@
             <!-- <td id="fe3" class="for_e">Haneda Airport</td> -->
             <td id="t3">14:09</td>
             
-            <td id="s3" class="exp"><marquee>桜木町、横浜、新横浜の順に停車</marquee></td>
+            <td class="exp"><p id="s3">桜木町、横浜、新横浜の順に停車</p></td>
         </tr>
     </table>
     
-    <div id="going">上大岡・戸塚・湘南台方面 <br></div>
+    <div id="bl">ブルーライン 上大岡・戸塚・湘南台方面 <br></div>
     <table class="main">
-        <tr>
+        <tr class="col">
             <td class="a">発車順</td>
             <td class="b">種別</td>
             <td class="c" colspan="2">行先</td>
@@ -65,8 +65,7 @@
             <td id="fj01" colspan="2" class="for_j">あざみ野</td>
             <!-- <td id="fe1" class="for_e">Haneda Airport</td> -->
             <td id="t01">14:03</td>
-            
-            <td  class="exp"><marquee>桜木町、高島町、横浜、三ッ沢下町の順に停車</marquee></td>
+            <td class="exp"><p id="s01">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
         </tr>
         <tr class="big">
             <td class="for_e">次発</td>
@@ -75,7 +74,7 @@
             <!-- <td id="fe2" class="for_e">Haneda Airport</td> -->
             <td id="t02">14:05</td>
             
-            <td id="s02" class="exp"><marquee>桜木町、高島町、横浜、三ッ沢下町の順に停車</marquee></td>
+            <td class="exp"><p id="s02">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
         </tr>
         <tr class="big none">
             <td>3</td>
@@ -84,7 +83,46 @@
             <!-- <td id="fe3" class="for_e">Haneda Airport</td> -->
             <td id="t03">14:09</td>
             
-            <td id="s03" class="exp"><marquee>桜木町、横浜、新横浜の順に停車</marquee></td>
+            <td class="exp"><p id="s03">桜木町、横浜、新横浜の順に停車</p></td>
+        </tr>
+
+    </table>
+    <span class="none">
+    <div id="jr">京浜東北線 横浜・川崎・品川方面 <br></div>
+    <table class="main">
+        <tr>
+            <td class="a">発車順</td>
+            <td class="b">種別</td>
+            <td class="c" colspan="2">行先</td>
+            <td class="d">到着時刻</td>
+            <td class="f">備考</td>
+        </tr>
+        <tr class="big">
+            <td class="for_e">先発</td>
+            <td class="kind" id="k11"><div class="jr_lo">各駅停車</div></td>
+            <td id="fj11" colspan="2" class="for_j">南浦和</td>
+            <!-- <td id="fe1" class="for_e">Haneda Airport</td> -->
+            <td id="t11">14:03</td>
+            
+            <td class="exp"><p id="s11">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
+        </tr>
+        <tr class="big">
+            <td class="for_e">次発</td>
+            <td class="kind" id="k12"><div class="jr_lo">各駅停車</div></td>
+            <td id="fj12" colspan="2" class="for_j">大　宮</td>
+            <!-- <td id="fe2" class="for_e">Haneda Airport</td> -->
+            <td id="t12">14:05</td>
+            
+            <td class="exp"><p id="s12">桜木町、高島町、横浜、三ッ沢下町の順に停車</p></td>
+        </tr>
+        <tr class="big none">
+            <td>3</td>
+            <td class="kind" id="k13"><div class="rle">快速</div></td>
+            <td id="fj13" colspan="2" class="for_j">新横浜</td>
+            <!-- <td id="fe3" class="for_e">Haneda Airport</td> -->
+            <td id="t13">14:09</td>
+            
+            <td class="exp"><p id="s13" >桜木町、横浜、新横浜の順に停車</p></td>
         </tr>
         <tr class="ads">
             <td colspan="7"><marquee>このWebサイトをホーム画面に追加することで、日常に役立ててください。</marquee></td>
@@ -92,5 +130,6 @@
     </table>
     <script src="script.js"></script>
     <script src="script0.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>

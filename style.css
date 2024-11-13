@@ -23,34 +23,58 @@ table{
     width:100vw;
     
 }
+.col{
+    font-size:1.8vw;
+}
 .big{
     font-size:2vw;
     background-color: #111111;
+}
+td{
+    max-height:15vh;
 }
 .none{
     display:none;
 }
 .a{
-    width:6%;
+    width:6vw;
 }
 .b{
-    width:12%;
+    width:12vw;
 }
 .c{
-    width:30%;
+    width:30vw;
 }
 .d{
-    width:18%;
+    width:18vw;
 }
 .e{
-    width:10%;
+    width:10vw;
 }
 .f{
-    width:24%;
+    width:24vw;
 }
 .exp{
     font-size:2vw;
     color:rgb(255, 217, 0);
+    overflow: hidden;
+    width:20vw;
+    max-width:20vw;
+}
+    
+.exp > p {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation-name: MarqueeScroll;
+    animation-timing-function: linear;
+    animation-duration: 8s; /* 1周するのにかかる時間 */
+    animation-iteration-count: infinite; /* 繰り返す回数 */
+}
+    
+@keyframes MarqueeScroll {
+    from { transform: translateX(0);}
+    to { transform: translateX(-100%);}
 }
 .for_j{
     font-size:3vw;
@@ -62,16 +86,25 @@ td.for_j{
     font-size:1.5vw;
 }
 .local{
-    background-color:#0099ff;
+    background-color:#0000ff;
     padding:1vw 0;
     margin:0;
+}
+.jr_lo{
+    background-color:#00A7E3;
+    padding:1vw 0;
+    margin:0; 
 }
 .ra{
     background-color:#ff1111;
     padding:1vw 0;
     margin:0;
 }
-
+.yoko{
+    background-color:#85C023;
+    padding:1vw 0;
+    margin:0; 
+}
 .eng{
     font-size:2vw;
     padding:1.5vw 0;
@@ -81,6 +114,9 @@ td.for_j{
     color:orange;
     font-size:4vw;
 }
-#going{
+#bl{
     background-color:#2f00ff;
+}
+#jr{
+    background-color:#22aa22;
 }
