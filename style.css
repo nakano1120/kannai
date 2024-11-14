@@ -33,6 +33,7 @@ table{
 }
 td{
     max-height:15vh;
+    
 }
 .none{
     display:none;
@@ -78,7 +79,7 @@ td{
     to { transform: translateX(-100%);}
 }
 .for_j{
-    font-size:3vw;
+    font-size:4vw;
 }
 td.for_j{
     border:none;
@@ -88,27 +89,31 @@ td.for_j{
 }
 .local{
     background-color:#0000ff;
-    padding:1.9vw 0;
-    border-radius: 10px;
+    font-size:3vw;
+    padding:0.8vw 0;
+    border-radius: 2vw;
 }
 .jr_lo{
     background-color:#00A7E3;
-    padding:1.9vw 0;
-    border-radius: 10px;
+    font-size:2vw;
+    padding:1.6vw 0;
+    border-radius: 2vw;
 }
 .ra{
     background-color:#ff1111;
-    padding:1.9vw 0;
-    border-radius: 10px;
+    font-size:3vw;
+    padding:0.8vw 0;
+    border-radius: 2vw;
 }
 .yoko{
     background-color:#85C023;
-    padding:1.9vw 0;
-    border-radius: 10px;
+    font-size:2.3vw;
+    padding:1.3vw 0;
+    border-radius: 2vw;
 }
 .eng{
-    font-size:2vw;
-    padding:2.1vw 0;
+    font-size:3vw;
+    padding:1vw 0;
 
 }
 .ads{
@@ -123,4 +128,9 @@ td.for_j{
 }
 .final{
     color:red;
+}
+@media screen and (max-width: 767px) {
+    .none{
+        display:table-row;
+    }
 }
