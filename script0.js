@@ -93,7 +93,7 @@ let coming0_for = [
 let kinds0=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local'>普通</div>","<div class='final local'>最終</div>","　"]
 let kinds0_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng local'>Local</div>","<div class='eng final local'>Final</div>","　"]
 let kinds0_s=["伊勢佐木長者町から各駅に停まります","上大岡、上永谷と、戸塚からの各駅に停まります","湘南台行き 最終電車です","上永谷行き 最終電車です","　"]
-let kinds0_for=["湘南台","踊場","上永谷","　"]
+let kinds0_for=["湘南台","踊　場","上永谷","　"]
 let kinds0_fore=["Shonandai","Odoriba","Kaminagaya","　"]
 let exec0IntervalFunc = function() {
     let jtime = new Date();

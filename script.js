@@ -101,7 +101,7 @@ let coming_for = [
 let kinds=["<div class='local'>普通</div>","<div class='ra'>快速</div>","<div class='local final'>最終</div>","　"]
 let kinds_e=["<div class='eng local'>Local</div>","<div class='eng ra'>Rapid</div>","<div class='eng final local'>Final</div>","　"]
 let kinds_s=["桜木町からの各駅に停まります","桜木町、横浜、新横浜、新羽からの各駅に停まります","あざみ野行き 最終電車です","　"]
-let kinds_for=["あざみ野","新羽","　"]
+let kinds_for=["あざみ野","新　羽","　"]
 let kinds_fore=["Azamino","Nippa","　"]
 let execIntervalFunc = function() {
     let jtime = new Date();
